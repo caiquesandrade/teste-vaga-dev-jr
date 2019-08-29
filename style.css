@@ -78,6 +78,10 @@
   background: rgba(27, 3, 243, 0.89);
 }
 
+.msg-nook {
+  background: rgba(49, 85, 38, 0.801);
+}
+
 
 body {
   background: #76b852; /* fallback for old browsers */

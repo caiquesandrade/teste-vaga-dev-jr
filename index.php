@@ -24,11 +24,17 @@ session_start();
             endif;
             unset($_SESSION['nao_autenticado']);
           ?>
+          <div class="container msg-ok">
+            <p>Usuário Cadastrado com Sucesso.</p>
+          </div>
+          <div class="container msg-nook">
+            <p>Usuário já existe !</p>
+          </div>
             <div class="form">
               <form class="register-form" action="cadastrar.php" method="POST">
-                <input type="text" placeholder="Nome"/>
-                <input type="password" placeholder="Senha"/>
-                <input type="text" placeholder="Endereço de Email"/>
+                <input type="text" placeholder="Nome" name="usuario"/>
+                <input type="password" placeholder="Senha" name="senha"/>
+                <input type="text" placeholder="Endereço de Email" name="email"/>
                 <button>Criar</button>
                 <p class="message">Já tem uma conta ? <a href="#">Entrar</a></p>
               </form>
