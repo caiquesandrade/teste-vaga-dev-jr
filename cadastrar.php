@@ -4,13 +4,13 @@ include('conexao.php');
 
 
 $usuario = mysqli_real_escape_string($conexao, trim($_POST['usuario']));
-$senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
-$email = mysqli_real_escape_string($conexao, trim(md5($_POST['email'])));
+$senha = mysqli_real_escape_string($conexao, trim(md5($_POST['senha'])));
+$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
 
 //Validação se o usuário existe ou não
 
-$sql = "SELECT count(*) FROM `usuario` WHERE usuario = '$usuario'";
-$result = mysqli_query($sql);
+$sql = "select count(*) as total from usuarios where usuario = '$usuario'";
+$result = mysqli_query($conexao, $sql);
 $row = mysqli_fetch_assoc($result);
 
 if($row['total'] == 1) {
@@ -19,8 +19,16 @@ if($row['total'] == 1) {
     exit;
 }
 
-$sql = "INSERT INTO usuario (usuario, senha, email, data_cadastro) VALUES ('$usuario', '$senha', '$email', NOW())";
+// Faz inserção na tabela de dados usuarios de acordo com as informações que o usuário digitar.
 
-if()
+$sql = "INSERT INTO usuarios (usuario, senha, email, data_reg) VALUES ('$usuario', '$senha', '$email', NOW())";
 
+if($conexao->query($sql) === TRUE) {
+    $_SESSION['status_cadastro'] = true;
+}
+
+$conexao->close();
+
+header('Location: index.php');
+exit;
 ?>

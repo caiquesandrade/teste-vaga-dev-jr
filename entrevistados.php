@@ -17,15 +17,15 @@ include('verify_login.php');
               <h1>HOME</h1>
               <h3>Bem vindo, <?php echo $_SESSION['usuario'];?>.</h3>
                 <button class="new-register"><a>Novo Entrevistado</a></button>
-                <form class="register-form">
-                    <input type="text" placeholder="Nome" required/>
-                    <input type="text" placeholder="Endereço de Email" required/>
-                    <input type="text" placeholder="Telefone" required/>
-                    <input type="text" placeholder="Data de Nascimento" required/>
-                    <input type="text" placeholder="Cursando Faculdade ?" required/>
-                    <input type="text" placeholder="Pretenção Salarial" required/>
-                    <input type="text" placeholder="Habilidades do Candidato"required/>
-                    <button>Criar</button>
+                <form class="register-form" action="pessoas.php" method="POST">
+                    <input type="text" placeholder="Nome" name="nome"  required/>
+                    <input type="text" placeholder="Endereço de Email" name="email"  required/>
+                    <input type="text" placeholder="Telefone" name="telefone"  required/>
+                    <input type="text" placeholder="Data de Nascimento" name="data_de_nasc"  required/>
+                    <input type="text" placeholder="Cursando Faculdade ?" name="estuda"  required/>
+                    <input type="text" placeholder="Pretenção Salarial" name="pretencao_salarial"  required/>
+                    <input type="text" placeholder="Habilidades do Candidato" name="descricao" required/>
+                    <button type="submit" >Criar</button>
                 </form>
                 <form>
                     <button class="new-register">Ver Cadastrados</button>

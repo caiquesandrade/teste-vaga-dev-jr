@@ -16,7 +16,7 @@ $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 
 //Verificar se o login esta correto ou não
 
-$query = "select usuario_id, usuario from usuario where usuario = '{$usuario}' and senha = md5('{$senha}')";
+$query = "select usuario_id, usuario from usuarios where usuario = '{$usuario}' and senha = md5('{$senha}')";
 
 $result = mysqli_query($conexao, $query);
 

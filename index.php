@@ -24,12 +24,26 @@ session_start();
             endif;
             unset($_SESSION['nao_autenticado']);
           ?>
+          <?php 
+            if(isset($_SESSION['status_cadastro'])):
+          ?>
           <div class="container msg-ok">
             <p>Usuário Cadastrado com Sucesso.</p>
           </div>
+          <?php
+            endif;
+            unset($_SESSION['status_cadastro']);
+          ?>
+           <?php 
+            if(isset($_SESSION['usuario_existe'])):
+          ?>
           <div class="container msg-nook">
             <p>Usuário já existe !</p>
           </div>
+          <?php
+            endif;
+            unset($_SESSION['usuario_existe']);
+          ?>
             <div class="form">
               <form class="register-form" action="cadastrar.php" method="POST">
                 <input type="text" placeholder="Nome" name="usuario"/>
