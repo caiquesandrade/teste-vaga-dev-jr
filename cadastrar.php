@@ -14,9 +14,7 @@ $result = mysqli_query($conexao, $sql);
 $row = mysqli_fetch_assoc($result);
 
 if($row['total'] == 1) {
-    $_SESSION['usuario_existe'] = true;
-    header('Location: index.php');
-    exit;
+    echo "existe";
 }
 
 // Faz inserção na tabela de dados usuarios de acordo com as informações que o usuário digitar.
