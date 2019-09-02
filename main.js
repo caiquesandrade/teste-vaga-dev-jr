@@ -10,9 +10,13 @@
 
    //Abrir Popup
    var abrir = function(URL) {
+<<<<<<< HEAD
       window.open(URL,
           'Teste',
           'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');
+=======
+      window.open(URL, 'Teste', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');
+>>>>>>> a38865289421d6568bd75be60678ae9ac0e79abf
    }
 
    //Mascara para inpute de data

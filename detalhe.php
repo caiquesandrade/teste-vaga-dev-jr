@@ -20,6 +20,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
     
 </head>
 	<body style="text-align: center; margin: 10% auto;">
+<<<<<<< HEAD
 	    <div class="form">
             <h3>Detalhe de <strong><?php echo $row_usuario['nome']; ?></strong> :</h3>
             <table>
@@ -44,6 +45,35 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
                     <td><?php echo $row_usuario['descricao']; ?></td>
                 </tr>
             </table>
+=======
+		
+		
+        
+        <div class="form"s>
+        <h3>Detalhe de <strong><?php echo $row_usuario['nome']; ?></strong> :</h3>
+        <table>
+            <tr>
+              <td>Telefone</td>
+              <td><?php echo $row_usuario['telefone']; ?></td>
+            </tr>
+            <tr>
+                <td>Data de Nascimento</td>
+                <td><?php echo date('d/m/Y', strtotime($row_usuario['data_de_nasc'])); ?></td>
+            </tr>
+            <tr>
+                <td>Qual curso</td>
+                <td><?php echo $row_usuario['estuda']; ?></td>
+            </tr>
+            <tr>
+              <td>Pretenção salarial</td>
+              <td><?php echo $row_usuario['pretencao_salarial']; ?></td>
+            </tr>
+            <tr>
+                <td>Habilidades do candidato</td>
+                <td><?php echo $row_usuario['descricao']; ?></td>
+            </tr>
+        </table>
+>>>>>>> a38865289421d6568bd75be60678ae9ac0e79abf
         </div>
     </body>
 </html>

@@ -80,9 +80,15 @@ $con      = $conexao->query($consulta) or die($mysqli->error);
               <td><?php echo date('d/m/Y', strtotime($dado['data_reg'])); ?></td>
               <td>
                 <a href="javascript:abrir('editar_pessoas.php?codigo=<?php echo $dado['id_pessoa'];?>');"><img src="img/edit.png" alt="Edit item" height="32" width="32"></a>
+<<<<<<< HEAD
                 <a href="excluir_pessoa.php?codigo=<?php echo $dado['id_pessoa']; ?>"><img src="img/delete.png" alt="Delete item" height="32" width="32"></a>
                 <a href="incluir_fav.php?codigo=<?php echo $dado['id_pessoa']; ?>"><img src="img/favorite.png" alt="Favorite item" height="32" width="32"></a>
                 <a href="javascript:abrir('detalhe.php?codigo=<?php echo $dado['id_pessoa'];?>');"><img src="img/detail.png" alt="Detail item" height="32" width="32"></a>
+=======
+                <a href="excluir_pessoa.php?codigo=<?php echo $dado['id_pessoa']; ?>"><img src="img/delete.png" alt="Edit item" height="32" width="32"></a>
+                <a href="usu_excluir.php?codigo=<?php echo $dado['id_pessoa']; ?>"><img src="img/favorite.png" alt="Edit item" height="32" width="32"></a>
+                <a href="javascript:abrir('detalhe.php?codigo=<?php echo $dado['id_pessoa'];?>');"><img src="img/detail.png" alt="Edit item" height="32" width="32"></a>
+>>>>>>> a38865289421d6568bd75be60678ae9ac0e79abf
               </td>
             </tr>
             <?php } ?>

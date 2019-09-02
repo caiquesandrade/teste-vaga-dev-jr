@@ -18,7 +18,11 @@
   border-radius: 4px;
 }
 .form input, .form textarea {
+<<<<<<< HEAD
   font-family: 'Open Sans', sans-serif;
+=======
+  font-family: "Roboto", sans-serif;
+>>>>>>> a38865289421d6568bd75be60678ae9ac0e79abf
   outline: 0;
   background: #f2f2f2;
   width: 100%;
