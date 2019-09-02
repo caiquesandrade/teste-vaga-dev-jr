@@ -16,7 +16,7 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 4px;
 }
-.form input {
+.form input, .form textarea {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -27,6 +27,7 @@
   box-sizing: border-box;
   font-size: 14px;
   border-radius: 7px;
+  resize: none;
 }
 .form button {
   font-family: "Roboto", sans-serif;
@@ -59,27 +60,89 @@
   display: none;
 }
 .container {
-  position: relative;
+  position: relative ;
   z-index: 1;
-  max-width: 300px;
+  width: 60%;
   margin: 10px auto ;
   padding: 2px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   color: antiquewhite;
   font-weight: bold;
   border-radius: 7px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .msg-fail {
+  max-width: 300px;
   background: rgba(243, 3, 3, 0.89);
 }
 
 .msg-ok {
+  max-width: 300px;
   background: rgba(27, 3, 243, 0.89);
 }
 
 .msg-nook {
+  max-width: 300px;
   background: rgba(49, 85, 38, 0.801);
+}
+
+
+/* Tabela */
+
+.tabela {
+  background: rgba(255, 255, 255, 0.952);
+  margin: 5% auto; 
+  text-align: center;
+  color: #43A047;
+
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 10px 8px;
+  margin: 8px;
+}
+
+table tr:not(:last-child) {
+  border-bottom: 1px solid #dddddd;
+  
+}
+
+table td {
+  padding: 8px;
+}
+
+.new-register{
+  margin: 5px 0;
+}
+
+
+/* Responsividade da tabela */
+
+@media (max-width: 600px) {
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 10px 8px;
+    margin: 8px;
+    padding: 10px;
+  }
+
+  .tabela{
+    width: 95%;
+  }
+
+  .tabela tr:not(:last-child) {
+    border-bottom: 1px solid #dddddd;
+  }
+  .tabela td {
+    border: 0;
+  }
+  .tabela td:not(:first-child) {
+    display: block;
+  }
 }
 
 
@@ -96,7 +159,4 @@ body {
 }
 
 
-.new-register{
-  margin: 5px 0;
-}
 

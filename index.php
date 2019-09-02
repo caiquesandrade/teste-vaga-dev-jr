@@ -10,7 +10,7 @@ session_start();
     <title>Entrevistados | Login </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src='main.js'></script>
+    
 </head>
 <body>
         <div class="login-page">
@@ -61,10 +61,11 @@ session_start();
           </div>
         </div>
 </body>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous" type="text/javascript">
+  </script>
   <script src='main.js'></script>
 
 </html>

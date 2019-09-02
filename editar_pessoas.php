@@ -32,3 +32,8 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
         </form>
     </body>
 </html>
+
+<?php
+$conexao->close();
+exit;
+?>

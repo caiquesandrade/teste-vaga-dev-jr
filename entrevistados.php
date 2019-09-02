@@ -14,7 +14,7 @@ $con      = $conexao->query($consulta) or die($mysqli->error);
     <title>Entrevistados | Home </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src='main.js'></script>
+    
 </head>
 <body>
       <div class="login-page">
@@ -38,12 +38,12 @@ $con      = $conexao->query($consulta) or die($mysqli->error);
               <button class="new-register"><a>Novo Entrevistado</a></button>
               <form class="register-form" action="pessoas.php" method="POST">
                     <input type="text" placeholder="Nome" name="nome"  required/>
-                    <input type="text" placeholder="Endereço de Email" name="email"  required/>
-                    <input type="text" placeholder="Telefone" name="telefone"  required/>
-                    <input type="text" placeholder="Data de Nascimento" name="data_de_nasc"  required/>
+                    <input type="email" placeholder="Endereço de Email" name="email"  required/>
+                    <input type="tel" placeholder="Telefone" name="telefone" onkeypress="return telMask(this, event);" maxlength="14" required/>
+                    <input type="text" placeholder="Data de Nascimento" name="data_de_nasc" onkeypress="return dateMask(this, event);" maxlength="10" required/>
                     <input type="text" placeholder="Cursando Faculdade ?" name="estuda"  required/>
-                    <input type="text" placeholder="Pretenção Salarial" name="pretencao_salarial"  required/>
-                    <input type="text" placeholder="Habilidades do Candidato" name="descricao" required/>
+                    <input type="text" placeholder="Pretenção Salarial" name="pretencao_salarial" onkeypress="return preco(this, event);" required/>
+                    <textarea type="text" placeholder="Habilidades do Candidato" name="descricao" style="vertical-align: top;" required></textarea>
                     <button type="submit" >Criar</button>
               </form>
               <form>
@@ -54,10 +54,9 @@ $con      = $conexao->query($consulta) or die($mysqli->error);
               </div>
           </div>
         </div>
-        <div style="margin: 5% auto; background-color: aliceblue; text-align: center;">
-          <table >
+        <div class="container tabela">
+          <table>
             <tr>
-              <td>Código</td>
               <td>Nome</td>
               <td>E-mail</td>
               <td>Data de Cadastro</td>
@@ -65,29 +64,28 @@ $con      = $conexao->query($consulta) or die($mysqli->error);
             </tr>
             <?php while($dado = $con->fetch_array()) { ?>
             <tr>
-              <td><?php echo $dado['id_pessoa']; ?></td>
               <td><?php echo $dado['nome']; ?></td>
               <td><?php echo $dado['email']; ?></td>
               <td><?php echo date('d/m/Y', strtotime($dado['data_reg'])); ?></td>
               <td>
-                <a href="javascript:abrir('editar_pessoas.php?codigo=<?php echo $dado['id_pessoa'];?>');">Editar</a>
-                <a href="usu_excluir.php?codigo=<?php echo $dado['id_pessoa']; ?>">Excluir</a>
-                <a href="usu_excluir.php?codigo=<?php echo $dado['id_pessoa']; ?>">Destacar</a>
+                <a href="javascript:abrir('editar_pessoas.php?codigo=<?php echo $dado['id_pessoa'];?>');"><img src="img/edit.png" alt="Edit item" height="32" width="32"></a>
+                <a href="excluir_pessoa.php?codigo=<?php echo $dado['id_pessoa']; ?>"><img src="img/delete.png" alt="Edit item" height="32" width="32"></a>
+                <a href="usu_excluir.php?codigo=<?php echo $dado['id_pessoa']; ?>"><img src="img/favorite.png" alt="Edit item" height="32" width="32"></a>
+                <a href="javascript:abrir('detalhe.php?codigo=<?php echo $dado['id_pessoa'];?>');"><img src="img/detail.png" alt="Edit item" height="32" width="32"></a>
               </td>
             </tr>
             <?php } ?>
             </table>
           </div>      
 </body>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src='main.js'></script>
-  <script langue="javascript">
-    var abrir = function(URL) {
-      window.open(URL, 'Teste', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');
-    }
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous" type="text/javascript">
   </script>
-
+  <script src='main.js'></script>
+  
+  <script>
+  
+</script>
 </html>
